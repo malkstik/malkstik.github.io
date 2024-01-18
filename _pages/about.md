@@ -12,7 +12,7 @@ Hello! I am currently a master's student at the University of Michigan studying 
 
 My areas of focus are in control, motion planning, and state estimation.
 
-In my spare time, I like to spend time with my two cats, Tsu and Ina. I also enjoy racket sports, gaming, going to the gym, and cooking.
+In my spare time I like to spend time with my two cats, Tsu and Ina. I also enjoy racket sports, gaming, going to the gym, and cooking.
 
 ### Ina
 <img src="/images/Ina.jpg"
