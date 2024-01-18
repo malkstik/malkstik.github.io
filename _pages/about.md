@@ -15,11 +15,11 @@ My areas of focus are in control, motion planning, and state estimation.
 In my spare time, I like to spend time with my two cats, Tsu and Ina. I also enjoy racket sports, gaming, going to the gym, and cooking.
 
 ### Ina
-<img src="Ina.png"
+<img src="/images/Ina.png"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
 
 ### Tsu
-<img src="Tsu.png"
+<img src="/images/Tsu.png"
      alt="Markdown Monster icon"
      style="float: right; margin-right: 10px;" />
