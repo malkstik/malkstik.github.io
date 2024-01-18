@@ -4,3 +4,10 @@ excerpt: "**Relevant skills: Optimal Control, GNC, MATLAB**  \
 The optimal guidance law for missile pursuit involves solving an optimization that can be computationally expensive. This implementation makes use of motion primitives to approximate the behavior of the optimal guidance law for a 2D evader-pursuer scenario in MATLAB. This project was completed for AEROSP584:Navigation and Guidance from Perception to Control at the University of Michigan Ann Arbor."
 collection: projects
 ---
+
+As a final project, students of AEROSP584 were tasked to create a guidance law that for a pursuer-evader mission. The pursuer is a AIM120C5 beyond-visual-range air-to-air missile. The evader is a F-16 fighter. Completing this project requires modeling the dynamics of each agent in 2D through the pursuit and creating a guidance law inspired by the optimal guidance law. Some considerations for these dynamics include: varying air density, a varying thrust profile, and limitations on turning speed.
+
+The optimal guidance law tends to have the pursuer utilize its boost thrust to climb into rarer atmoshphere, where drag would be lower allowing the pursuer to gain more speed for the same thrust. Following this the pursuer can dive drawing from its higher potential and kinetic energy to catch up to the evader. My guidance law converts the inputs from an example of the climbing, or lofting, regime into a motion primitive that the pursuer uses for all of its boost regime. This set of inputs has been tuned by adjusting a scaling factor. This is then followed by a gravity corrected proportional guidance law until collision. The algorithm also considers if climbing is necessary. If it is not, then the pursuer simply follows the gravity corrected proportional guidance law until collision.
+
+## Results at 10 different initial conditions:
+<img src="/images/OptGuidance.jpg">

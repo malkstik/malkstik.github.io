@@ -5,4 +5,4 @@ The Image Guided Medical Robotics (IGMR) Lab at the University of Michigan is in
 collection: projects
 ---
 
-
+<i>This project is being actively worked on. You can expect demos in the near future! </i>
