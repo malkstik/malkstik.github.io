@@ -14,10 +14,8 @@ The DAQ consists of two STM32L476RG Nucleos, synchronized using two HiLetgo HC-0
 
 Refer to the Senior Project report and project documentation for more information.
 
-
-
 See project documentation here: 
-[link] https://malkstik.github.io/Planarizer-DAQ/
+[Documentation](https://malkstik.github.io/Planarizer-DAQ/)
 
 See Senior Project report here: 
-[link] https://github.com/malkstik/Planarizer-DAQ/blob/main/Final%20Design%20Review%20Planarizer.pdf
+[Report](https://github.com/malkstik/Planarizer-DAQ/blob/main/Final%20Design%20Review%20Planarizer.pdf)
