@@ -16,10 +16,8 @@ In my spare time, I like to spend time with my two cats, Tsu and Ina. I also enj
 
 ### Ina
 <img src="/images/Ina.png"
-     alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
 
 ### Tsu
 <img src="/images/Tsu.png"
-     alt="Markdown Monster icon"
-     style="float: right; margin-right: 10px;" />SoftRob
+     style="float: right; margin-right: 10px;" />
