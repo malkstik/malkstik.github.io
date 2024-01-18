@@ -16,8 +16,8 @@ In my spare time, I like to spend time with my two cats, Tsu and Ina. I also enj
 
 ### Ina
 <img src="/images/Ina.jpg"
-     style="float: left; margin-right: 10px;" />
+     width=200 />
 
 ### Tsu
 <img src="/images/Tsu.jpg"
-     style="float: right; margin-right: 10px;" />
+     width= 200/>
