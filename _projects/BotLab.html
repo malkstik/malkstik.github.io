@@ -1,0 +1,22 @@
+---
+title: "ROB550: Bot Lab"
+excerpt: "**Relevant skills: lcm, C++, Motor Control, Raspberry Pi, SLAM, Path Planning**  
+Program a differential wheeled robot to autonomously navigate through mazes. This project was completed for ROB550 at the University of Michigan Ann Arbor."
+collection: projects
+---
+
+
+A full working demo for this project was not recorded; however, some necessary intermediate functionality was recorded.
+
+Waypoint following (no SLAM): <br/>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IVqW4vKkOPE?si=4ZqLmPUAhO8pW8jb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+SLAM: <br/>
+This image displays a map generated using log odds scoring of an occupancy grid map for the same obstacle course as in the waypoint following demonstration. 
+The straight green lines connect waypoints but were not required to be traveled along. The curvy green line is the path measured by just wheel encoders. The curvy
+purple line shows the output of a particle filter which considers the robots dynamics, the odometry, and the map.
+<img src="images/SLAM.png">
+
+Documentation: <br/>
+If the embedded PDF below does not load, you can <u><a href="https://malkstik.github.io/files/BotLab_Report.pdf">download it here.</a></u>
+<br/>
