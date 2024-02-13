@@ -16,8 +16,8 @@ gem "github-pages", group: :jekyll_plugins
 
 # gem "jekyll"
 
-gem "github-pages", "=228"
-
+# gem "github-pages", "=228"
+gem “jekyll”, “=3.9.3”
 gem "wdm", "~> 0.1.0" if Gem.win_platform?
 
 # If you have any plugins, put them here!
