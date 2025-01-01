@@ -1,0 +1,62 @@
+---
+title: "Robotic Arm Optical Coherence Tomography Motion Planning "
+excerpt: "**Relevant skills: ROS, MoveIt, Klamp't, isaacgym, C++, Python, Path Planning, Docker**  <br/>
+The Image Guided Medical Robotics (IGMR) Lab at the University of Michigan is interested in developing a device that can autonomously manipulate an optical coherence tomographer (OCT) to image retinas. I work with industry standard frameworks, such as ROS2 and MoveIt, to implement the motion planning for this project."
+collection: projects
+---
+
+This project is aimed at enabling the use of optical coherence tomography with bedridden patients in potentially cluttered environments, 
+as one might find in a hospital room. My contributions toward this are in the path planning of a UR5e robotic arm, subject to the following constraints:
+<ol>
+    <li>The patient must remain in view through motion</li>
+    <li>The robot must respect prescribed kinodynamic limits to ensure patient safety </li>
+    <li>Generated motion plans must be both smooth and predictable, as to inspire confidence in the patient</li>
+    <li>The plan must be capable of replanning at 10Hz to support a dynamic environment</li>
+</ol> 
+Sample based planners were written due to their prevalence over the past few decades. Probabilistic trajectory optimization is a more modern approach,
+that was investigated towards the end of this project. 
+
+<br/>
+
+<h1>
+Sampled Based Planning
+</h1>
+Sample based planners were initially written in MoveIt2 and moved to Klamp't for easier prototyping and greater control over constrained sampling.
+Single-Query Bi-Directional Probablistic Roadmap with a shortcut heuristic was selected as the planner of choice due to its ability to quickly generate plans. 
+The constraint sampler allows for sampling poses in task space that force the robot to stay on the same side of singularities (elbow up/down, wrist write/left, etc.) and 
+keeping the target eye within view .
+<br/>
+
+<h2>
+Obstacle Free
+</h2>
+<iframe src="https://drive.google.com/file/d/16jefZ24iY1x4Sei_LT7LfV_JFtsvrbe1/preview" width="640" height="480" allow="autoplay"></iframe>
+<br/>
+
+<h2>
+Obstacle Present
+</h2>
+<iframe src="https://drive.google.com/file/d/11msma0fTa5bLu64GJk9IvcRMiYEtKxrI/preview" width="640" height="480" allow="autoplay"></iframe>
+<br/>
+Note that the jerkiness of this demonstration is due to passing an unprocessed plan through a trajectory optimizer from Klamp't 
+
+<h1>
+Sample Based Trajectory Optimization
+</h1>
+This method for path planning has seen considerable attention from research in recent years. It is also capable of determining direct torque inputs to obtain
+prescribed control goals, but for our case just determining a path is sufficient. In comparison to traditional sample based planning, this method can produce more rich
+behabior through careful cost function design. They also naturally support quick replanning, as they work by only rolling out the first action from each optimization. 
+<br/>
+The two algorithms considered are model path predictive integral control (MPPI) and improved cross entropy method (iCEM). They were developed using
+Stochastic Tensor Optimization for Robot Motion, a toolkit designed specifically for designing algorithms such as these, which rollout many particles in parallel.
+<br/>
+<h2>
+MPPI
+</h2>
+<iframe src="https://drive.google.com/file/d/1FqVuNxaWgfPqN-06Ri1pU5-5-s8NxVJ_/preview" width="640" height="480" allow="autoplay"></iframe>
+<br/>
+
+<h2>
+iCEM
+</h2>
+<iframe src="https://drive.google.com/file/d/1iCSsWTXsYJOGhvv9KVVUzD5bbTNTV4Qa/preview" width="640" height="480" allow="autoplay"></iframe>
