@@ -1,24 +1,33 @@
 ---
 title: "QuadcopterControl"
-excerpt: "**Relevant skills: Python, Drake, Robot Kinematics and Dynamics, Optimal Control, Trajectory Optimization, Docker, Quaternions** <br/>
+excerpt: "**Relevant skills: Python, Drake, CasADi, Robot Kinematics and Dynamics, Optimal Control, Trajectory Optimization, Docker, Quaternions** <br/>
 Investigate and implement nonlinear trajectory optimization techniques for planning and control of a quadcopter using Drake."
 collection: projects
 ---
 
-<u><a href="https://github.com/malkstik/OptCtrlPractice">Code</a></u> 
+<u><a href="https://github.com/malkstik/iLQR">Code</a></u> 
 <br/>
 
 <br/>
-Drake is an extremely powerful tool as a simulator and for designing controls algorithms. In this project, the goal is to familiarize 
-myself with this tool. In doing so, I would like to also become more comfortable with quaternion dynamics, a much more robust alternative to
-euler angles. As of now, I have managed to put together a working model of a quadcopter using quaternions for orientation representations, built an LQR
-controller for this model, and written a working iLQR controller for stabilizing a car's trajectory onto a cicular path. The next step is to connect what
-I learned from building both of these controllers to build an iLQR controller for a quadcopter.  
-<br/>
+Drake is an extremely powerful tool as a simulator and for designing controls algorithms. This project aims to familiarize myself with it through developing
+the popular nonlinear trajectory optimization strategy, iterated Linear Quadratic Regulator (iLQR), for directly providing motor commands to stabilize to a desired 
+state. In doing so, I have also delved into quaternion dynamics, a significantly more robust, but slightly more complicated, alternative to euler angles. 
 
-<h2>LQR: </h2>
-<iframe src="https://drive.google.com/file/d/1NoRS-j9hyjSUmSDFCX7NYR6rtPs04sTs/preview" width="640" height="480" allow="autoplay"></iframe><br/>
+In the attached repository, I present my implementation of iLQR in python with examples of use with a car, acrobot, and quadrotor. The user only need design a model of the plant
+that provides dynamics, cost, and derivative information to utilize the controller. For an example of how this controller specifically handles quaternion dynamics, refer to control/models/Quadrotor_Quat.py,
+where a model of the quadrotor has been written using CasADi with special consideration towards quaternions.
 <br/>
 
 <h2>iLQR for a car: </h2>
 <img src="/images/ilqr.png" alt="ilqr">
+<br/>
+
+<h2>iLQR for the Acrobot</h2>
+<iframe src="https://drive.google.com/file/d/1-ArJq8Yga7oCeG1v48f9hX_8beChQtW5/preview" width="640" height="480" allow="autoplay"></iframe>
+<br/>
+
+<h2>iLQR for a Quadcopter using quaternion dynamics</h2>
+The following demonstrates a quadrotor initialized with high velocity, and large difference in orientation from the goal state. The specific chosen
+orientation is near a singularity for a roll pitch yaw representation, allowing quaternions to prove their use here. The high velocity and awkward orientation
+force the controller to reason through fairly nonlinear dynamics, eliminating the potential for LQR to handle this situation. 
+<iframe src="https://drive.google.com/file/d/1Ri_ttcT4AxYyZQ7qPHUTlHCgLn_IbzXV/preview" width="640" height="480" allow="autoplay"></iframe>
